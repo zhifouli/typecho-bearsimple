@@ -14,7 +14,9 @@ if (!class_exists('CSF_Field_code_editor')) {
     {
 
         public $version = '5.65.2';
-        public $cdn_url = 'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/codemirror/';
+        //字节跳动CDN失效，更换为cdnjs
+        // public $cdn_url = 'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/codemirror/';
+        public $cdn_url = 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/';
         public $theme_url = 'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/codemirror/5.65.2/theme/shadowfox.min.css';
 
         public function __construct($field, $value = '', $unique = '', $where = '', $parent = '')
