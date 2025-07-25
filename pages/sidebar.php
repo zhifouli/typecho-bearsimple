@@ -108,6 +108,18 @@
     <?php while($categorys->next()): ?>
 <?php if ($categorys->levels === 0): ?>
 <?php $children = $categorys->getAllChildren($categorys->mid); ?>
+<?php 
+// 修复一级分类文章数显示问题：计算一级分类及其子分类的文章总数
+// 原始代码只显示一级分类本身的文章数，不包括子分类的文章数
+$totalCount = $categorys->count; // 一级分类本身的文章数
+if (!empty($children)) {
+    // 遍历所有子分类，累加它们的文章数
+    foreach ($children as $mid) {
+        $child = $categorys->getCategory($mid);
+        $totalCount += $child['count']; // 累加子分类文章数
+    }
+}
+?>
 <?php if (empty($children)) { ?>
     <li>
       <div class="tree-node">
@@ -118,7 +130,8 @@
   <li>
       <div class="tree-node">
         <span class="toggle-icon"></span>
-        <a href="<?php $categorys->permalink(); ?>" class="category-link"><?php $categorys->name(); ?> <span class="category-count">(<?php echo $categorys->count(); ?>)</span></a>
+        <!-- 对于有子分类的一级分类，显示包含子分类文章数的总计数 -->
+        <a href="<?php $categorys->permalink(); ?>" class="category-link"><?php $categorys->name(); ?> <span class="category-count">(<?php echo $totalCount; ?>)</span></a>
       </div>
       <ul class="tree-view">
           <?php foreach ($children as $mid) { ?>
