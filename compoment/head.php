@@ -66,8 +66,10 @@ switch(Bsoptions('IframeProtect')){
 <link href="<?php AssetsDir();?>assets/css/bearsimple.min.css?v=<?php echo themeVersion(); ?>" rel="stylesheet">
 <link href="<?php AssetsDir();?>assets/vendors/fomantic-ui/semantic.min.css?v=2" rel="stylesheet">
 <link href="<?php AssetsDir();?>assets/css/modules/global_custom.css?v=<?php echo themeVersion(); ?>" rel="stylesheet">
-<link rel="preload" href="//lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/5.15.4/css/all.min.css?ver=5.15.4" as="style" onload="this.rel='stylesheet'" crossorigin>
-<link rel="preload" href="//lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/5.15.4/css/v4-shims.min.css?ver=5.15.4" as="style" onload="this.rel='stylesheet'" crossorigin>
+<!-- 替换为 cdnjs 源 -->
+<link rel="preload" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.rel='stylesheet'" crossorigin>
+<!-- 替换为 cdnjs 源 -->
+<link rel="preload" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/v4-shims.min.css" as="style" onload="this.rel='stylesheet'" crossorigin>
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;500;600;700;900&display=swap" as="style" onload="this.rel='stylesheet'" crossorigin>
 <link rel="preload" href="<?php AssetsDir();?>assets/css/lxgw/style.css" as="style" onload="this.rel='stylesheet'" crossorigin>
 <script src="<?php AssetsDir();?>assets/js/toastr.min.js"></script>
